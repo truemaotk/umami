@@ -24,7 +24,7 @@ import {
   PanelsLeftBottom,
 } from '@/components/icons';
 import { UserButton } from '@/components/input/UserButton';
-import { Logo } from '@/components/svg';
+import Image from 'next/image';
 
 export function SideNav(props: any) {
   const { t, labels } = useMessages();
@@ -97,8 +97,17 @@ export function SideNav(props: any) {
           flexGrow="1"
         >
           {!isCollapsed && (
-            <IconLabel icon={<Logo />}>
-              <Text weight="bold">umami</Text>
+            <IconLabel
+              icon={
+                <Image
+                  src="/maotk-favicon.svg"
+                  alt="MAOTK"
+                  width={20}
+                  height={20}
+                />
+              }
+            >
+              <Text weight="bold">Maotk</Text>
             </IconLabel>
           )}
           <PanelButton />
