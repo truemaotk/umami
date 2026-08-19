@@ -5,13 +5,12 @@ import {
   FormField,
   FormSubmitButton,
   Heading,
-  Icon,
   PasswordField,
   TextField,
 } from '@umami/react-zen';
 import { useRouter } from 'next/navigation';
 import { useMessages, useUpdateQuery } from '@/components/hooks';
-import { Logo } from '@/components/svg';
+import Image from 'next/image';
 import { setClientAuthToken } from '@/lib/client';
 import { setUser } from '@/store/app';
 
@@ -37,10 +36,13 @@ export function LoginForm() {
 
   return (
     <Column justifyContent="center" alignItems="center" gap="6">
-      <Icon size="lg">
-        <Logo />
-      </Icon>
-      <Heading>umami</Heading>
+<Image
+  src="/maotk-favicon.svg"
+  alt="Maotk"
+  width={48}
+  height={48}
+/>
+<Heading>Maotk</Heading>
       <Form onSubmit={handleSubmit} error={getErrorMessage(error)} style={{ minWidth: 300 }}>
         <FormField
           label={t(labels.username)}
