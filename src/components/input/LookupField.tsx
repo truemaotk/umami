@@ -35,9 +35,11 @@ export function LookupField({
     endDate,
   });
 
-  const items: string[] = useMemo(() => {
-    return data?.map(({ value }) => value) || [];
-  }, [data]);
+const items: string[] = useMemo(() => {
+  return data
+    ?.map(item => item?.value)
+    .filter((value): value is string => Boolean(value)) || [];
+}, [data]);
 
   const handleSearch = (value: SetStateAction<string>) => {
     setSearch(value);
