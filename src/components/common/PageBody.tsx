@@ -3,7 +3,7 @@ import { Alert, AlertTitle, Column, type ColumnProps, Loading } from '@umami/rea
 import type { ReactNode } from 'react';
 import { useMessages } from '@/components/hooks';
 
-const DEFAULT_WIDTH = '1600px';
+const DEFAULT_WIDTH = '100%';
 
 export function PageBody({
   maxWidth = DEFAULT_WIDTH,
